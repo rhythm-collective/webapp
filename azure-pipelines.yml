@@ -18,6 +18,6 @@ steps:
 - script: |
     npm install
     tsc --project tsconfig.json --sourcemap
-    npm run compile
     codecov
+    npm run build
   displayName: 'ts compile. npm package'
