@@ -29,8 +29,6 @@ steps:
     npm run build
   displayName: 'ts compile. npm package'
 
-- script: ls -la
-
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'Build'
+    PathtoPublish: 'build'
