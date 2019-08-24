@@ -32,3 +32,9 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'build'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Docker Hub'
+    repository: 'web-app-sample'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
