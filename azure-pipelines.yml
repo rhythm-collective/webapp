@@ -38,19 +38,16 @@ stages:
         tags: |
               $(tag)
               latest
-- stage: PackageHelmArtifacts
-  displayName: Package Helm Artifacts
-  jobs:
-  - job: PushArtifact
-    pool:
-      vmImage: 'ubuntu-latest'
-      steps:
-      - task: CopyFiles@2
-        inputs:
-            contents: 'helm/**'
-            targetFolder: $(Build.ArtifactStagingDirectory)
-      - task: PublishBuildArtifacts@1
-        inputs:
-            PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-            ArtifactName: 'helmfiles'
-            publishLocation: 'Container'
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: 'helm'
+        Contents: '**'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)/helm'
+        CleanTargetFolder: true
+        OverWrite: true
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'helmfiles'
+        publishLocation: 'Container'
+
