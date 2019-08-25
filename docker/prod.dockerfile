@@ -5,7 +5,7 @@ COPY package.json ./
 RUN npm install --silent
 RUN npm install react-scripts@3.1.1 -g --silent
 COPY . ./
-RUN react-scripts build
+RUN npm run build
 
 # production environment
 FROM nginx:1.16.0-alpine
