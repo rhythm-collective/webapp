@@ -28,9 +28,6 @@ steps:
     npm run build
   displayName: 'ts compile. npm package'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: 'build'
 - task: Docker@2
   inputs:
     containerRegistry: 'Docker Hub'
