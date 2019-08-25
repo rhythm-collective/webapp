@@ -34,3 +34,8 @@ steps:
     repository: 'rhythmcollective/web-app-sample'
     command: 'buildAndPush'
     Dockerfile: 'docker/prod.dockerfile'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: 'helm/webapp-production.yaml'
+    artifactName: 'helm-chart'
