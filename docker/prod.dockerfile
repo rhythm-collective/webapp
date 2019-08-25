@@ -2,7 +2,7 @@ FROM node:12.9.0-alpine as build
 WORKDIR /usr/src/app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
-RUN npm install --silent
+RUN npm install -g --silent
 RUN npm install react-scripts@3.1.1 -g --silent
 COPY . ./
 RUN npm run build
