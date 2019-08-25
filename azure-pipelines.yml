@@ -37,3 +37,14 @@ stages:
         tags: |
               $(tag)
               'latest'
+- stage: PackageHelmArtifacts
+  displayName: Package Helm Artifacts
+  jobs:
+  - job: PushArtifact
+    pool:
+      vmImage: 'ubuntu-latest'
+      steps:
+      - task: PublishPipelineArtifact@1
+        inputs:
+            targetPath: '$(Pipeline.Workspace)/helm'
+            artifact: 'helm-artifacts'
