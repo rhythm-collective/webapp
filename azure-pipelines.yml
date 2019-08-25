@@ -36,7 +36,7 @@ stages:
         Dockerfile: 'docker/prod.dockerfile'
         tags: |
               $(tag)
-              'latest'
+              latest
 - stage: PackageHelmArtifacts
   displayName: Package Helm Artifacts
   jobs:
