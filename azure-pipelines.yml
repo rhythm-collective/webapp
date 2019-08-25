@@ -37,6 +37,7 @@ stages:
         tags: |
               $(tag)
               latest
+        arguments: .
 - stage: PackageHelmArtifacts
   displayName: Package Helm Artifacts
   jobs:
