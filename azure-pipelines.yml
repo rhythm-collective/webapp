@@ -30,8 +30,8 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    pathtoPublish: 'helm/webapp-production.yaml'
-    artifactName: 'helm-chart'
+    PathtoPublish: 'build'
+    artifactName: 'build'
 
 - task: Docker@2
   inputs:
