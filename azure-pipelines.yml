@@ -45,7 +45,12 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
       steps:
-      - task: PublishPipelineArtifact@1
+      - task: CopyFiles@2
         inputs:
-            targetPath: '$(Pipeline.Workspace)'
-            artifact: 'helm-artifact'
+            contents: 'helm/**'
+            targetFolder: $(Build.ArtifactStagingDirectory)
+      - task: PublishBuildArtifacts@1
+        inputs:
+            PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+            ArtifactName: 'helmfiles'
+            publishLocation: 'Container'
