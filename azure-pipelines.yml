@@ -37,4 +37,4 @@ steps:
     containerRegistry: 'Docker Hub'
     repository: 'web-app-sample'
     command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    Dockerfile: 'docker/prod.dockerfile'
