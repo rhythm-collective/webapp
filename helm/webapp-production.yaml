@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: webapp-ingress
+  namespace: rhythmcollective
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/tls-acme: 'true'
+spec:
+  tls:
+  - hosts:
+    - rhythmcollective.online
+    secretName: rc-tls-cert
+  rules:
+  - host: rhythmcollective.online
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: webapp-production
+          servicePort: 80
+---

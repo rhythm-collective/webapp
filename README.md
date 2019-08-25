@@ -62,12 +62,14 @@
 - If it worked you will see: `Ready with Device ID ###...`
 - If you get the error:
 
-        Authentication failed spotify:21:77
-            onSpotifyWebPlaybackSDKReady http://lvh.me/examples/spotify:21
-            _onEvent https://sdk.scdn.co/spotify-player.js:2
-            _onEvent https://sdk.scdn.co/spotify-player.js:2
-            _handleMessages https://sdk.scdn.co/spotify-player.js:2
-            _receiveMessage https://sdk.scdn.co/spotify-player.js:2
+```bash
+Authentication failed spotify:21:77
+    onSpotifyWebPlaybackSDKReady http://lvh.me/examples/spotify:21
+    _onEvent https://sdk.scdn.co/spotify-player.js:2
+    _onEvent https://sdk.scdn.co/spotify-player.js:2
+    _handleMessages https://sdk.scdn.co/spotify-player.js:2
+    _receiveMessage https://sdk.scdn.co/spotify-player.js:2
+```
 
   Then your access token has either expired, or is incorrect.
 
@@ -80,3 +82,32 @@
 - Run the Launch Firefox Examples project.
 - Navidate to `examples/draw`.
 - If it worked you will see an animating line running up at canvas.
+
+## Helm setup
+
+> Follow this section to set up your local helm environment. You do not need to set up a local helm environment if you will be using the remove github pipeline exclusively.
+
+```bash
+# todo
+```
+
+## Context Specific Helm Setup
+
+> Do not call these commands when already conntected to a previously set up remote cluster.
+
+1) Initialize cert-manager. ([cert-manager installation walkthrough](https://docs.cert-manager.io/en/latest/getting-started/install/kubernetes.html))
+   > When installing cert-manager, the final step, make sure you set the default issuer to either prod or staging.
+   >
+   >`helm install cert-manager --namespace cert-manager jetstack/cert-manager --set ingressShim.defaultIssuerName=letsencrypt-staging --set ingressShim.defaultIssuerKind=ClusterIssuer`
+   >
+   >`helm install cert-manager --namespace cert-manager jetstack/cert-manager --set ingressShim.defaultIssuerName=letsencrypt-prod --set ingressShim.defaultIssuerKind=ClusterIssuer`
+
+2) Create the defined ACME issuers.
+
+   ```bash
+   kubectl apply -f issuers.yaml
+   ```
+
+### Upgrading cert-manager
+
+> Visit this link to upgrade the helm cert manager. ([cert-manager Upgrade](https://docs.cert-manager.io/en/latest/tasks/upgrading/index.html))
