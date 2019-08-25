@@ -22,7 +22,7 @@ schedules:
 
 stages:
 - stage: BuildAndPush
-  display: build and push
+  displayName: Build and Push
   jobs:
   - job: Build
     pool:
