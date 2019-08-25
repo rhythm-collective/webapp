@@ -1,6 +1,35 @@
-# siteapp
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[![Build Status](https://travis-ci.org/rhythm-collective/siteapp.svg?branch=master)](https://travis-ci.org/rhythm-collective/siteapp) [![Coverage Status](https://coveralls.io/repos/github/rhythm-collective/siteapp/badge.svg?branch=master)](https://coveralls.io/github/rhythm-collective/siteapp?branch=master) [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+# webapp
+
+[![Build Status](https://travis-ci.org/rhythm-collective/webapp.svg?branch=master)](https://travis-ci.org/rhythm-collective/webapp) [![Coverage Status](https://coveralls.io/repos/github/rhythm-collective/webapp/badge.svg?branch=master)](https://coveralls.io/github/rhythm-collective/webapp?branch=master) [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
 ## Initial configuration
 
@@ -82,6 +111,13 @@ Authentication failed spotify:21:77
 - Run the Launch Firefox Examples project.
 - Navidate to `examples/draw`.
 - If it worked you will see an animating line running up at canvas.
+
+## Digitalocean Kubernetes
+
+> Create a simple 2 node kuberenetes cluster.
+
+1) Create the cluster in DO UI.
+2) [How to Connect to a DigitalOcean Kubernetes Cluster](https://www.digitalocean.com/docs/kubernetes/how-to/connect-to-cluster/)
 
 ## Helm setup
 
