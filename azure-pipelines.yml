@@ -34,6 +34,6 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'Docker Hub'
-    repository: 'web-app-sample'
+    repository: 'rhythmcollective/web-app-sample'
     command: 'buildAndPush'
     Dockerfile: 'docker/prod.dockerfile'
