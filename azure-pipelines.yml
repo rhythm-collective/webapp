@@ -47,5 +47,5 @@ stages:
       steps:
       - task: PublishPipelineArtifact@1
         inputs:
-            targetPath: 'helm'
-            artifact: 'helm-artifacts'
+            targetPath: '$(Pipeline.Workspace)'
+            artifact: 'helm-artifact'
