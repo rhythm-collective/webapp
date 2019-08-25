@@ -33,7 +33,7 @@ stages:
         containerRegistry: 'Docker Hub'
         repository: 'rhythmcollective/web-app-sample'
         command: 'buildAndPush'
-        Dockerfile: 'docker/prod.dockerfile'
+        Dockerfile: '**/prod.dockerfile'
         tags: |
               $(tag)
               latest
